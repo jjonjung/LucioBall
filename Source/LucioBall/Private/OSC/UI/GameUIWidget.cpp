@@ -1,0 +1,87 @@
+﻿// Fill out your copyright notice in the Description page of Project Settings.
+
+
+#include "OSC/UI/GameUIWidget.h"
+
+#include "Components/TextBlock.h"
+#include "OSC/UI/EndGameWidget.h"
+#include "OSC/UI/ScoreWidget.h"
+#include "OSC/UI/TimerWidget.h"
+#include "OSC/UI/GoalTextWidget.h"
+#include "OSC/UI/SkillWidget.h"
+#include "OSC/UI/UltGaugeWidget.h"
+
+void UGameUIWidget::OnVictory()
+{
+	EndGame->OnVictory();
+}
+
+void UGameUIWidget::OnDefeat()
+{
+	EndGame->OnDefeact();
+}
+
+void UGameUIWidget::UpdatePlayerScore(int32 NewScore)
+{
+	ScoreWidget->SetPlayerScore(NewScore);
+}
+
+void UGameUIWidget::UpdateOtherScore(int32 NewScore)
+{
+	ScoreWidget->SetOtherScore(NewScore);
+}
+
+void UGameUIWidget::UpdateTimer(float NewTime)
+{
+	TimerWidget->UpdateRemainTime(NewTime);
+}
+
+void UGameUIWidget::UpdateGoalText(FText Text)
+{
+	GoalTextWidget->UpdateGoalText(Text);
+}
+
+void UGameUIWidget::UpdateSkill(int Idx, float Sec)
+{
+	switch (Idx)
+	{
+		case 0:
+		Skill0->UpdateProgress(Sec);
+		break;
+		case 1:
+		Skill1->UpdateProgress(Sec);
+		break;
+	}
+}
+
+void UGameUIWidget::UpdateUlt(float DeltaTime)
+{
+	UltWidget->UpdateProgress(DeltaTime);
+}
+
+void UGameUIWidget::UpdateStartTimer(int32 CurrentTime)
+{
+	StartTimer->SetText(FText::AsNumber(CurrentTime));
+	PlayAnimation(StartTimeAnimation);
+	if (CurrentTime <= 0)
+		StartTimer->SetVisibility(ESlateVisibility::Hidden);
+	
+}
+
+void UGameUIWidget::UseSkill(int Idx)
+{
+	switch (Idx)
+	{
+	case 0:
+		Skill0->UseSkill();
+		break;
+	case 1:
+		Skill1->UseSkill();
+		break;
+	}
+}
+
+void UGameUIWidget::UseUlt()
+{
+	UltWidget->UseUlt();
+}
