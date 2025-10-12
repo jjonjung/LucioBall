@@ -1,13 +1,60 @@
-## LucioBall 프로젝트 포트폴리오 요약
 
-**프로젝트명:** LucioBall (오버워치 루시우 볼 모드 재현)
+# LucioBall
+## ✓ Project Overview
+<div align="center">
 
-**개요:**
-LucioBall은 인기 게임 오버워치의 "루시우 볼" 모드를 언리얼 엔진 5와 C++를 사용하여 재현한 프로젝트입니다. 플레이어는 루시우 캐릭터를 조작하여 공을 골대에 넣어 득점하며, AI 플레이어와 상호작용하고 다양한 UI 요소를 통해 게임 상태를 시각적으로 확인할 수 있습니다. 이 프로젝트는 복잡한 게임 로직, AI 구현, 물리 시뮬레이션 및 사용자 인터페이스 개발 능력을 보여줍니다.
+<table border="0" cellspacing="0" cellpadding="8" style="width: 100%; table-layout: fixed;">
+  <tr>
+    <td style="width: 20%; padding: 8px;"><strong>Project Name</strong></td>
+    <td style="padding: 8px;">LucioBall - 오버워치 루시우 볼 모드 재현</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>Duration</strong></td>
+    <td style="padding: 8px;">2025.09 ~ Development in Progress</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>Team Size</strong></td>
+    <td style="padding: 8px;">Solo Development</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>Engine</strong></td>
+    <td style="padding: 8px;">Unreal Engine 5</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>Language</strong></td>
+    <td style="padding: 8px;">C++ & Blueprint</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>Version Control</strong></td>
+    <td style="padding: 8px;">Git (main / feature branch workflow)</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>Purpose</strong></td>
+    <td style="padding: 8px;">UE5 C++ 기반 물리·AI 중심 스포츠 게임 모드 구현</td>
+  </tr>
+</table>
 
-**주요 기술 스택:**
-*   **게임 엔진:** Unreal Engine 5
-*   **프로그래밍 언어:** C++
+</div>
+
+---
+
+## ✓ Tool & Skill
+<div align="center">
+
+  ### Game Development  
+  ![Unreal Engine 5](https://img.shields.io/badge/Unreal%20Engine-5.0-blue?style=for-the-badge&logo=unrealengine&logoColor=white)
+  ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+  ![Blueprint](https://img.shields.io/badge/Blueprint-00599C?style=for-the-badge&logo=unrealengine&logoColor=white)
+
+  ### Version Control  
+  ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+</div>
+
+---
+
+
+## Technical Architecture
 
 **핵심 구현 사항:**
 
@@ -21,16 +68,7 @@ LucioBall은 인기 게임 오버워치의 "루시우 볼" 모드를 언리얼 �
     *   **`AiLucio.cpp`**: 루시우 캐릭터의 AI를 구현하여 점프 포인트 찾기, 점프, 벽 타기, 낙하, 공 차기 등 다양한 상태를 처리합니다. 경로 찾기, 벽 추적, 공 접근 및 차기 방향 계산 로직을 포함하며, 유휴 및 이동 상태에 따른 애니메이션을 관리합니다.
     *   **`AiWallRunning.cpp`**: AI 캐릭터를 위한 벽 타기 메커니즘을 제공합니다. 벽 감지, 벽 타기 시작/중지, 벽에 붙는 힘 적용, 벽 타기 중 움직임 관리, 점프 포인트 감지 및 자동 점프 기능을 포함합니다.
 
-3.  **UI 시스템 (`OSC/UI`):**
-    *   **`GameHUD.cpp` / `GameUIWidget.cpp`**: 게임 내 HUD 및 중앙 UI 위젯으로, 플레이어/상대 점수, 게임 타이머, 골 텍스트, 스킬 쿨다운, 궁극기 게이지 등 모든 UI 요소를 관리하고 업데이트합니다.
-    *   **`GoalTextWidget.cpp`**: "Goal!" 또는 "OwnGoal!" 텍스트를 애니메이션과 함께 표시하고 일정 시간 후 숨기는 기능을 구현합니다.
-    *   **`LobbyHUD.cpp` / `LobbyUIWidget.cpp`**: 로비 화면의 HUD 및 기본 UI 위젯을 담당하며, 마우스 커서 표시 및 UI 전용 입력 모드를 설정합니다.
-    *   **`LobbyTextButtonWidget.cpp`**: 재사용 가능한 텍스트 버튼 위젯으로, 마우스 진입 및 클릭 애니메이션, 클릭 이벤트 브로드캐스트를 처리합니다.
-    *   **`ScoreWidget.cpp`**: 플레이어와 상대방의 점수를 표시하고 업데이트합니다.
-    *   **`SkillWidget.cpp` / `UltGaugeWidget.cpp`**: 동적 머티리얼 인스턴스를 활용하여 스킬 쿨다운 및 궁극기 충전 진행 상황을 시각적으로 관리하고 표시합니다.
-    *   **`TimerWidget.cpp`**: 남은 게임 시간을 "분:초" 형식으로 표시합니다.
-
-4.  **캐릭터 기본 클래스:**
+3.  **캐릭터 기본 클래스:**
     *   **`VelCharacter.cpp`**: 이전 프레임의 속도를 저장하는 기본 캐릭터 클래스로, 움직임 예측 및 특정 물리 상호작용에 활용될 수 있습니다.
 
 이 프로젝트는 복잡한 게임 시스템 설계, AI 행동 트리 구현, 물리 기반 상호작용 처리, 그리고 동적 UI 업데이트 등 언리얼 엔진을 활용한 게임 개발의 다양한 측면을 성공적으로 다루었음을 보여줍니다.
