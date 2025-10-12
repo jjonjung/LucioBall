@@ -83,6 +83,6 @@
 
 ## 📽️ 시연 영상
 
-👉 [루시우볼 시연 영상 보러가기](https://drive.google.com/file/d/18snPkepaegbdS48mYFibXah6AyisMZHf/view?usp=drive_link)  
+👉 [루시우볼 시연 영상 보러가기](https://drive.google.com/file/d/1WzeukMkCH1PVE4JRHo5lG4I4Vtluvo1q/view?usp=drive_link)  
 *(게임의 전반적인 흐름, AI, 충돌 반응 등을 확인할 수 있습니다)*
 
