@@ -10,7 +10,7 @@
   </tr>
   <tr>
     <td style="padding: 8px;"><strong>Duration</strong></td>
-    <td style="padding: 8px;">2025.09 ~ Development in Progress</td>
+    <td style="padding: 8px;">2025.07 ~ 2025.09</td>
   </tr>
   <tr>
     <td style="padding: 8px;"><strong>Team Size</strong></td>
